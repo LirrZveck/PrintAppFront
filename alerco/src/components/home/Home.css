@@ -108,7 +108,7 @@ p {
 }
 
 .section-title-circles-container-home {
-  display: flex;
+  display: none !important;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;

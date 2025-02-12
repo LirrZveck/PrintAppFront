@@ -2,8 +2,25 @@ import React, { useState } from "react";
 import Header from "../header/Header";
 import "./Home.css";
 import logoAlerco from "../images/Alear_Logo-1-1-1-1.png";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigateProduccion = useNavigate();
+
+  const handleClickProduccion = () => {
+    navigateProduccion("/nuevaproduccion");
+  };
+  const navigatePendiente = useNavigate();
+
+  const handleClickPendiente = () => {
+    navigatePendiente("/produccionpendiente");
+  };
+  const navigateInformes = useNavigate();
+
+  const handleClickInformes = () => {
+    navigateInformes("/Informes");
+  };
+
   const [showPopup, setShowPopup] = useState(false);
 
   const handleOpenPopup = () => {
@@ -151,7 +168,7 @@ const Home = () => {
         </div>
       )}
       <section className="categorias-escoger-actividad">
-        <div className="contenedor-actividades">
+        <div className="contenedor-actividades" onClick={handleClickProduccion}>
           <svg
             width="200"
             height="200"
@@ -179,7 +196,7 @@ const Home = () => {
           </svg>
           <span>NUEVA PRODUCCIÓN</span>
         </div>
-        <div className="contenedor-actividades">
+        <div className="contenedor-actividades" onClick={handleClickPendiente}>
           <svg
             width="200"
             height="200"
@@ -205,7 +222,7 @@ const Home = () => {
           </svg>
           <span>PRODUCCIÓNES PENDIENTES</span>
         </div>
-        <div className="contenedor-actividades">
+        <div className="contenedor-actividades" onClick={handleClickInformes}>
           <svg
             width="200"
             height="200"
